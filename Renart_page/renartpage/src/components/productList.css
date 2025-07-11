@@ -1,0 +1,169 @@
+.product-list-wrapper {
+  text-align: center;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.heading {
+  color: black;
+  font-family: "Avenir Book";
+  font-size: 45px;
+  margin: 8rem 0 4rem 0;
+}
+
+/* Scroll alanı ve butonlar için kapsayıcı */
+.product-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Scroll edilebilir ürün alanı */
+.product-scroll-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  padding: 0; 
+}
+
+/* Scrollbar (Chrome/Safari) */
+.product-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.product-scroll-container > * {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+.scroll-button {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: black;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.scroll-button:hover {
+  transform: scale(1.1);
+}
+
+.scroll-button.left {
+  position: absolute;
+  left: 10px;
+  top: 35%;
+}
+
+.scroll-button.right {
+  position: absolute;
+  right: 10px;
+  top: 35%;
+}
+
+/* Filtre butonları için */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group span {
+  font-weight: bold;
+  color: #333;
+  margin-right: 4px;
+}
+
+.filter-group button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-group button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Tablet için */
+@media (max-width: 640px) {
+  .product-card {
+    padding: 30px;
+    max-width: 180px;
+  }
+  .product-image {
+    width: 160px;
+    height: 170px;
+  }
+  .heading {
+    font-size: 28px;
+  }
+}
+
+/* Telefon için */
+@media (max-width: 480px) {
+  .product-card {
+    padding: 10px;
+    max-width: 120px;
+  }
+  .product-image {
+    width: 100px;
+    height: 110px;
+  }
+  .heading {
+    font-size: 18px;
+    margin: 2rem 0 1rem 0;
+  }
+  .product-scroll-container {
+    gap: 0.3rem;
+  }
+  .scroll-button.left,
+  .scroll-button.right {
+    top: 10%;
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: center;
+  
+  }
+}

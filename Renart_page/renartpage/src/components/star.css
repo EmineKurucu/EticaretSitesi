@@ -1,0 +1,103 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 20px;
+}
+
+.star-wrapper {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.star-background,
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.star-background {
+  color: #D9D9D9; /* boş yıldız rengi */
+  z-index: 0;
+}
+
+.star-fill {
+  color: #E6CA97;
+  white-space: nowrap;
+  z-index: 1;
+  overflow: hidden;
+}
+.rating-text {
+    font-family: "Avenir Book";
+  margin-left: 6px;
+  font-size: 14px;
+  color: black;
+}
+
+.selected-color-name {
+    font-family: "Avenir Book", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 4px;
+  }
+
+  .rating, .rating-text, .star {
+    font-family: "Avenir Book", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  /* Tablet için */
+  @media (max-width: 640px) {
+    .product-card {
+      padding: 30px;
+      max-width: 180px;
+    }
+    .product-image {
+      width: 160px;
+      height: 170px;
+    }
+    .heading {
+      font-size: 28px;
+    }
+    .filters {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
+  
+  /* Telefon için */
+  @media (max-width: 480px) {
+    .product-card {
+      padding: 10px;
+      max-width: 120px;
+    }
+    .product-image {
+      width: 100px;
+      height: 110px;
+    }
+    .heading {
+      font-size: 18px;
+      margin: 2rem 0 1rem 0;
+    }
+    .filters {
+      gap: 5px;
+      font-size: 12px;
+    }
+    .product-scroll-container {
+      gap: 0.3rem;
+    }
+    .scroll-button.left,
+    .scroll-button.right {
+      top: 10%;
+      font-size: 18px;
+      width: 24px;
+      height: 24px;
+    }
+  }

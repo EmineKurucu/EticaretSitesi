@@ -3,17 +3,19 @@ import axios from 'axios';
 import ProductCard from './productCard';
 import './productList.css';
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filterType, setFilterType] = useState('all'); // 'all', 'price', 'popularity'
+  const [filterType, setFilterType] = useState('all');
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  const fetchProducts = async (url = 'http://localhost:5000/products') => {
+  const fetchProducts = async (url = `${BASE_URL}/products`) => {
     setLoading(true);
     try {
       const response = await axios.get(url, {
@@ -31,20 +33,18 @@ const ProductList = () => {
 
   const handlePriceFilter = (min, max) => {
     setFilterType('price');
-    if (max === null) {
-      fetchProducts(`http://localhost:5000/products/price-range?min=${min}&max=100000`);
-    } else {
-      fetchProducts(`http://localhost:5000/products/price-range?min=${min}&max=${max}`);
-    }
+    const targetURL = max === null
+      ? `${BASE_URL}/products/price-range?min=${min}&max=100000`
+      : `${BASE_URL}/products/price-range?min=${min}&max=${max}`;
+    fetchProducts(targetURL);
   };
 
   const handlePopularityFilter = (min, max) => {
     setFilterType('popularity');
-    if (max === null) {
-      fetchProducts(`http://localhost:5000/products/popularity?min=${min}&max=5`);
-    } else {
-      fetchProducts(`http://localhost:5000/products/popularity?min=${min}&max=${max}`);
-    }
+    const targetURL = max === null
+      ? `${BASE_URL}/products/popularity?min=${min}&max=5`
+      : `${BASE_URL}/products/popularity?min=${min}&max=${max}`;
+    fetchProducts(targetURL);
   };
 
   const scrollLeft = () => {
@@ -59,7 +59,6 @@ const ProductList = () => {
     <div className="product-list-wrapper">
       <div className="heading">Product List</div>
 
-      {/* 🔽 Filtre Butonları */}
       <div className="filter-buttons">
         <div className="filter-group">
           <span>Price:</span>

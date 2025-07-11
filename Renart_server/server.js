@@ -3,8 +3,13 @@ const cors = require("cors");
 const app = express();
 const productRoutes = require("./routes/routes");
 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://renart-six.vercel.app"
+  ]
+}));
 
-app.use(cors()); 
 app.use(express.json());
 app.use("/products", productRoutes);
 

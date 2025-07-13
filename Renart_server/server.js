@@ -6,7 +6,8 @@ const productRoutes = require("./routes/routes");
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://renart-six.vercel.app"
+    "https://renart-six.vercel.app",
+    "https://renart-bu6js4tyq-eminekurucus-projects.vercel.app" // hata alırsan tekrar bunu dene
   ]
 }));
 

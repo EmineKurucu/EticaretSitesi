@@ -4,7 +4,7 @@ const path = require("path");
 const { error } = require("console");
 
 // altın fiyatlarını çekme
-const GOLD_API_KEY = "goldapi-kn2o8v19mcub24mw-io";
+const GOLD_API_KEY = "goldapi-1cveg0smd1tq7ls-io"; 
 const GOLD_API_URL = "https://www.goldapi.io/api/XAU/USD";
 
 // Altın fiyatı hesaplama

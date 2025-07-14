@@ -4,18 +4,24 @@ const path = require("path");
 const { error } = require("console");
 
 // altın fiyatlarını çekme
-const GOLD_API_KEY = "goldapi-45f3d19mcud2a2h-io"; 
+const GOLD_API_KEY = "goldapi-kn2o8v19mcub24mw-io"; 
 const GOLD_API_URL = "https://www.goldapi.io/api/XAU/USD";
 
 // Altın fiyatı hesaplama
 const getGoldPricePerGram = async () => {
-    const response = await axios.get(GOLD_API_URL, {
-        headers: {"x-access-token" : GOLD_API_KEY}
-    });
-    const pricePerOunce = response.data.price;
-    return pricePerOunce / 31.1035;
-}
+    try {
+        const response = await axios.get(GOLD_API_URL, {
+            headers: { "x-access-token": GOLD_API_KEY }
+        });
 
+        const pricePerOunce = response.data.price;
+        return pricePerOunce / 31.1035;
+    } catch (error) {
+        console.error("Altın fiyatı alınamadı, sabit değer kullanılacak:", error.response?.data || error.message);
+        const fallbackOuncePrice = 2400; // USD cinsinden 1 ons altın fiyatı
+        return fallbackOuncePrice / 31.1035;
+    }
+};
 // JSON Dosyası Okuma
 const readProducts  = () => {
     const filePath = path.join(__dirname, "..", "products.json");

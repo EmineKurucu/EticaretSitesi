@@ -7,9 +7,11 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://renart-six.vercel.app",
-    "https://renart-bu6js4tyq-eminekurucus-projects.vercel.app" // hata alırsan tekrar bunu dene
+    "https://renart-bu6js4tyq-eminekurucus-projects.vercel.app",
+    "https://renart-git-main-eminekurucus-projects.vercel.app"  
   ]
 }));
+
 
 app.use(express.json());
 app.use("/products", productRoutes);

@@ -2,7 +2,7 @@
 
 Bu proje, Node.js ve React teknolojilerini kullanarak geliştirilmiş dinamik bir e-ticaret web uygulamasıdır. Ürün verileri JSON formatında saklanmakta ve dış bir API'den (GoldAPI) alınan altın fiyatlarına göre ürün fiyatları gerçek zamanlı olarak hesaplanmaktadır.
 
-## 🚀 Özellikler
+##  Özellikler
 
 - Tek sayfalık modern web tasarımı
 - JSON dosyasından gelen ürün verilerinin listelenmesi
@@ -10,7 +10,7 @@ Bu proje, Node.js ve React teknolojilerini kullanarak geliştirilmiş dinamik bi
 - Fiyat ve popülerliğe göre filtreleme seçenekleri
 - Scroll ile yatay ürün listeleme
 
-## 🛠️ Kullanılan Teknolojiler
+##  Kullanılan Teknolojiler
 
 ### Frontend
 - React (Vite)

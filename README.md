@@ -24,7 +24,7 @@ Bu proje, Node.js ve React teknolojilerini kullanarak geliştirilmiş dinamik bi
 - GoldAPI ile canlı veri çekme
 
 ### Site Canlı Yayın Linki
-[Canlı Website Linki](renart-git-main-eminekurucus-projects.vercel.app)
+[Canlı Website Linki]([renart-git-main-eminekurucus-projects.vercel.app](https://renart-git-main-eminekurucus-projects.vercel.app/))
 
 ### Fotoğraflar
 ![Proje Ekran Görüntüsü](screenshots/image.png)
